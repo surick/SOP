@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,div,p,form,label,ul,li,dl,dt,dd,ol,img,button,h1,h2,h3,h4,h5,h6,b,em,strong,small{margin:0;padding:0;border:0;list-style:none;font-style:normal;font-weight:normal;}
+dl,dt,dd{display:block;margin:0;}
+a{text-decoration:none;}
+body{ font-family:Microsoft YaHei,Verdana,Arial,SimSun;color:#666;background:#f6f6f6; overflow:hidden}
+.block, #block{display:block;}
+.none, #none{display:none;}
+/*****头部和尾部******/
+.top{height:5px;line-height:5px;background:#f6f6f6;width:100%;position:fixed;z-index:255;top:79px;text-align:center;}
+.bottom{height:5px;line-height:5px;background:#f6f6f6;width:100%;position:fixed;z-index:255;bottom:50px;text-align:center;}
+#header{height:80px;line-height:80px;background:#00a5a5;width:100%;position:absolute;top:0;line-height:80px;font-family:Arial;font-size:30px;color:#fff;font-style:oblique; letter-spacing:3px;float:center;}
+#footer{height:50px;line-height:50px;background:#5e5e5e;width:100%;position:absolute;z-index:200;bottom:0;text-align:center;}
+#footer p{text-align:center;line-height:50px;color:#fbfbfb;font-style:oblique;font-family:Arial;font-size:12px;}
+/*****主体部分******/
+#content{width:100%;top:80px;position:absolute;z-index:10;bottom:50px;}
+
+                                                      
