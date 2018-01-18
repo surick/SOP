@@ -1,4 +1,4 @@
-# SOP电子文档分发
+# Electronic Document Publishing System（SOP电子文档分发）
 #实习完成的第一个项目啦。</br>
 #都是最基本的jsp+servlet /可怜</br>
 #想要重构一下，spring+vue.js看着还不错诶</br>
