@@ -22,22 +22,22 @@ public class LoginServlet
     String psw = new UserDao().findUsername(username);
     if ((username == "") || (password == ""))
     {
-      response.getWriter().write("<script>alert('ÌáÊ¾:ÃÜÂë»òÕËºÅ²»ÄÜÎª¿Õ!');history.go(-1);</script>");
+      response.getWriter().write("<script>alert('æç¤º:å¯†ç æˆ–è´¦å·ä¸èƒ½ä¸ºç©º!');history.go(-1);</script>");
     }
     else if (psw == null)
     {
-      response.getWriter().write("<script>alert('ÌáÊ¾:ÃÜÂë»òÕËºÅ´íÎó!');history.go(-1);</script>");
+      response.getWriter().write("<script>alert('æç¤º:å¯†ç æˆ–è´¦å·é”™è¯¯!');history.go(-1);</script>");
     }
     else if (psw.equals(password))
     {
-      request.setAttribute("msg", "ÓÃ»§£º" + username + ",»¶Ó­·ÃÎÊ");
+      //request.setAttribute("msg", "æ¬¢è¿:" + username);
       request.getSession().setAttribute("username", username);
       
       response.setHeader("Refresh", "1;url=admin/index.jsp");
     }
     else
     {
-      response.getWriter().write("<script>alert('ÌáÊ¾:ÃÜÂë»òÕËºÅ´íÎó!');history.go(-1);</script>");
+      response.getWriter().write("<script>alert('æç¤º:å¯†ç æˆ–è´¦å·é”™è¯¯!');history.go(-1);</script>");
     }
   }
 }

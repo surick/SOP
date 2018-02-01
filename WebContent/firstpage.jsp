@@ -36,9 +36,7 @@ DBDao.close(rs, stmt, con);
   <link href="admin/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
   <link href="http://csdnimg.cn/www/images/favicon.ico" rel="SHORTCUT ICON">
     <base href="<%=basePath%>">
-    
     <title>部门</title>
-    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    

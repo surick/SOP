@@ -33,12 +33,12 @@ public class UpmodelServlet
       pstmt.setString(3, MODEL_ID);
       pstmt.executeUpdate();
       System.out.println(sql);
-      message = "model更新成功！";
+      message = "鏇存柊鎴愬姛!";
       DBDao.close(null, pstmt, con);
     }
     catch (Exception e)
     {
-      message = "model更新失败！";
+      message = "鏇存柊澶辫触!";
       e.printStackTrace();
     }
     request.setAttribute("message", message);

@@ -30,7 +30,7 @@ public class AddModelServlet
       Statement stmt = con.createStatement();
       rs = stmt.executeQuery(sql1);
       if (rs.first()) {
-        message = "数据库已有同名model，请检查是否重复添加！";
+        message = "鏁版嵁搴撳凡鏈夊悓鍚峬odel锛岃妫�鏌ユ槸鍚﹂噸澶嶆坊鍔狅紒";
       } else {
         try
         {
@@ -40,13 +40,13 @@ public class AddModelServlet
           ps.setString(2, request.getParameter("group_id"));
           int row = ps.executeUpdate();
           if (row > 0) {
-            message = "添加成功";
+            message = "娣诲姞鎴愬姛!";
           }
           DBDao.close(null, ps, con);
         }
         catch (Exception e)
         {
-          message = "添加失败";
+          message = "娣诲姞澶辫触!";
           e.printStackTrace();
         }
       }
@@ -54,7 +54,7 @@ public class AddModelServlet
     }
     catch (Exception e)
     {
-      message = "error！" + e;
+      message = "error!" + e;
       e.printStackTrace();
     }
     request.getRequestDispatcher("admin/mod_message.jsp").forward(request, response);

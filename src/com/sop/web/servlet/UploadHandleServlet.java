@@ -40,7 +40,7 @@ public class UploadHandleServlet
     {
       public void update(long pBytesRead, long pContentLength, int arg2)
       {
-        System.out.println("ÎÄ¼ş´óĞ¡Îª£º" + pContentLength + ",µ±Ç°ÒÑ´¦Àí£º" + pBytesRead);
+        System.out.println("æ€»å¤§å°:" + pContentLength + ",å·²ä¸Šä¼ :" + pBytesRead);
       }
     });
     upload.setHeaderEncoding("UTF-8");
@@ -70,7 +70,7 @@ public class UploadHandleServlet
       Statement stmt = con.createStatement();
       rs = stmt.executeQuery(sql1);
       if (rs.first()) {
-        message = "Êı¾İ¿âÒÑÓĞÍ¬ÃûÎÄ¼ş£¬Çë¼ì²éÊÇ·ñÖØ¸´·¢²¼£¡";
+        message = "æ•°æ®åº“å·²æœ‰åŒåæ–‡ä»¶ï¼Œè¯·æ£€æŸ¥æ˜¯å¦é‡å¤å‘å¸ƒï¼";
       } else {
         try
         {
@@ -86,12 +86,12 @@ public class UploadHandleServlet
           pstmt.setString(8, FILE_PATH);
           pstmt.executeUpdate();
           System.out.println("name:" + FILE_NAME + "ver:" + FILE_VER);
-          message = "ÎÄ¼ş·¢²¼³É¹¦£¡";
+          message = "æ–‡ä»¶å‘å¸ƒæˆåŠŸï¼";
           DBDao.close(null, pstmt, con);
         }
         catch (Exception e)
         {
-          message = "¼ì²éÖØ¸´err" + e;
+          message = "error:" + e;
           e.printStackTrace();
         }
       }
@@ -100,20 +100,20 @@ public class UploadHandleServlet
     catch (FileUploadBase.FileSizeLimitExceededException e)
     {
       e.printStackTrace();
-      request.setAttribute("message", "µ¥¸öÎÄ¼ş³¬³ö×î´óÖµ£¡£¡£¡");
+      request.setAttribute("message", "å•ä¸ªæ–‡ä»¶è¶…å‡ºæœ€å¤§å€¼ï¼ï¼ï¼");
       request.getRequestDispatcher("admin/file_message.jsp").forward(request, response);
       return;
     }
     catch (FileUploadBase.SizeLimitExceededException e)
     {
       e.printStackTrace();
-      request.setAttribute("message", "ÉÏ´«ÎÄ¼şµÄ×ÜµÄ´óĞ¡³¬³öÏŞÖÆµÄ×î´óÖµ£¡£¡£¡");
+      request.setAttribute("message", "ä¸Šä¼ æ–‡ä»¶çš„æ€»çš„å¤§å°è¶…å‡ºé™åˆ¶çš„æœ€å¤§å€¼ï¼ï¼ï¼");
       request.getRequestDispatcher("admin/file_message.jsp").forward(request, response);
       return;
     }
     catch (Exception e)
     {
-      message = "ÎÄ¼ş·¢²¼Ê§°Ü£¡";
+      message = "æ–‡ä»¶å‘å¸ƒå¤±è´¥ï¼";
       e.printStackTrace();
     }
     request.getRequestDispatcher("admin/file_message.jsp").forward(request, response);

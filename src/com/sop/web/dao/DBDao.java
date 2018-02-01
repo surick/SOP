@@ -9,18 +9,15 @@ import java.util.ResourceBundle;
 
 public class DBDao {
 	public static String URL;
-    //ÓÃ»§Ãû
     public static String USERNAME;
-    //ÃÜÂë
     public static String PASSWORD;
-    //mysqlµÄÇı¶¯Àà
     public static String DRIVER;
     
     private static ResourceBundle rb = ResourceBundle.getBundle("com.sop.web.dao.db-config");
     
     private DBDao(){}
     
-    //Ê¹ÓÃ¾²Ì¬¿é¼ÓÔØÇı¶¯³ÌĞò
+    //ä½¿ç”¨é™æ€å—åŠ è½½é©±åŠ¨ç¨‹åº
     static{
         URL = rb.getString("jdbc.url");
         USERNAME = rb.getString("jdbc.username");
@@ -32,24 +29,19 @@ public class DBDao {
             e.printStackTrace();
         }
     }
-    //¶¨ÒåÒ»¸ö»ñÈ¡Êı¾İ¿âÁ¬½ÓµÄ·½·¨
+    
+    //å®šä¹‰ä¸€ä¸ªè·å–æ•°æ®åº“è¿æ¥çš„æ–¹æ³•
     public static Connection getConnection(){
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("»ñÈ¡Á¬½ÓÊ§°Ü");
+            System.out.println("è·å–è¿æ¥å¤±è´¥ï¼");
         }
         return conn;
     }
     
-    /**
-     * ¹Ø±ÕÊı¾İ¿âÁ¬½Ó
-     * @param rs
-     * @param stat
-     * @param conn
-     */
     public static void close(ResultSet rs,Statement stat,Connection conn){
             try {
                 if(rs!=null)rs.close();

@@ -15,12 +15,9 @@ a:link{
 }
 </style>
 <%	
-	Cookie c0 = new Cookie("isTrue","true");
-	c0.setMaxAge(50);
-	response.addCookie(c0);
-	Cookie c1 = new Cookie("livetime","alive");
-	c1.setMaxAge(50);
-	response.addCookie(c1);
+	//Cookie c1 = new Cookie("livetime","alive");
+	//c1.setMaxAge(50);
+	//response.addCookie(c1);
 	Connection con =null;
 	ResultSet rs =null;
 	con = DBDao.getConnection();
@@ -35,6 +32,9 @@ a:link{
 	//response.getWriter().print("当前页面版本"+ver);
 	//response.getWriter().print("当前页面版本"+new_ver);
 	if(!ver.equals(new_ver)){
+		Cookie c = new Cookie("isTrue","true");
+		c.setMaxAge(50);
+		response.addCookie(c);
 		response.getWriter().println("数据库已更新版本:"+new_ver+"!");
 		response.getWriter().write("<br><a href='javascript:void(0)' onclick='javascript:history.go(0)'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请重新获取</a>");
 		

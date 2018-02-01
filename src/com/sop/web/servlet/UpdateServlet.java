@@ -32,7 +32,7 @@ public class UpdateServlet
     {
       public void update(long pBytesRead, long pContentLength, int arg2)
       {
-        System.out.println("ÎÄ¼ş´óĞ¡Îª£º" + pContentLength + ",µ±Ç°ÒÑ´¦Àí£º" + pBytesRead);
+        System.out.println("æ€»å¤§å°:" + pContentLength + ",å·²ä¸Šä¼ :" + pBytesRead);
       }
     });
     upload.setHeaderEncoding("UTF-8");
@@ -84,12 +84,12 @@ public class UpdateServlet
       pstmt.executeUpdate();
       System.out.println(sql);
       System.out.println("name:" + FILE_NAME + "ver:" + FILE_VER);
-      message = "ÎÄ¼ş¸üĞÂ³É¹¦£¡";
+      message = "æ›´æ–°æˆåŠŸ!";
       DBDao.close(null, pstmt, con);
     }
     catch (Exception e)
     {
-      message = "ÎÄ¼ş¸üĞÂÊ§°Ü£¡";
+      message = "æ›´æ–°å¤±è´¥!";
       e.printStackTrace();
     }
     request.setAttribute("message", message);
