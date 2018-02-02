@@ -64,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 </div>
 <div class="bottom"></div>
-<div id="footer"><p>Copyright©江扬科技（无锡）有限公司  &nbsp;Version:1.1.5&nbsp; <a href="mailto:Jinguo.Li@mtigroup.com?subject=SOP系统%20问题" style="color:#32323a;" target="_blank">联系管理</a></p></div>
+<div id="footer"><p>Copyright©江扬科技（无锡）有限公司  &nbsp;Version:1.1.7&nbsp; <a href="mailto:Jinguo.Li@mtigroup.com?subject=SOP系统%20问题" style="color:#32323a;" target="_blank">联系管理</a></p></div>
 <script>navList(12);</script>
 </body>
 </html>

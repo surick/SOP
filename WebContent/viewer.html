@@ -25,35 +25,42 @@ http://sourceforge.net/adobe/cmap/wiki/License/
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="google" content="notranslate">
     <title>PDF.js viewer</title>
-
     <link rel="stylesheet" href="web/viewer.css"/>
-
     <script src="web/compatibility.js"></script>
 	<!-- <script> 
 	window.location.reload(true);
 	</script> -->
-
-
-
-<!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="web/locale/locale.properties"/>
-<script src="web/l10n.js"></script>
-<script src="web/build/pdf.js"></script>
-
-
-
-    <script src="web/debugger.js"></script>
-    <script src="web/viewer.js"></script>
-    <style> 
+	<!-- This snippet is used in production (included from viewer.html) -->
+	<link rel="resource" type="application/l10n" href="web/locale/locale.properties"/>
+	<script src="web/l10n.js"></script>
+	<script src="web/build/pdf.js"></script>
+	<script src="web/debugger.js"></script>
+	<script src="web/viewer.js"></script>
+	<style> 
   		@media print { 
     	body { display:none; } 
-  } 
-</style> 
-
+  		} 
+  		#setModel{
+  			color:red;
+			text-decoration:none;
+			text-align:center;
+  		}
+	</style> 
+	<script>
+	function delCookie(name){
+        var date = new Date();   
+        date.setTime(date.getTime() - 10000);   
+        document.cookie = name + "=a; expires=" + date.toGMTString();   
+    }   
+	</script>
   </head>
 
   <body tabindex="1" class="loadingInProgress">
   	<div id="tips" style="color:black;background-color:cyan;position:absolute;left:45%; top:50%;z-index:999;"></div>
+  	<div id="delSet" style="color:black;background-color:#6f6f6f;position:absolute;left:89.3%; top:8%;z-index:999;">
+  	<a id="setModel" href="firstpage.jsp" onclick="javascript:delCookie('isSet')"><span style="font-size:20px;">Reset Model</span></a>
+  	</div>
+  	
     <div id="outerContainer" >
 
       <div id="sidebarContainer">
