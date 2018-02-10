@@ -71,8 +71,8 @@
     		<select name="group_id" id="group_id">
     		<!-- <option value=0>请选择您的 部门</option>	 -->
     		<sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-     		url="jdbc:mysql://192.168.126.242:3306/proc_sop?useUnicode=true&characterEncoding=utf-8"
-     		user="iot"  password="Iot85228800#1"/>
+     		url=""
+     		user=""  password=""/>
      		<sql:query dataSource="${snapshot}" var="result">
 	 		SELECT * FROM `group`;
 	 		</sql:query>
