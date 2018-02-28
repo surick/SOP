@@ -21,7 +21,7 @@ body{text-align:center;margin:0 auto;font-family:Microsoft YaHei,Verdana,Arial,S
 	<form name="form">
 	<sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
      url="jdbc:mysql://192.168.126.242:3306/proc_sop?useUnicode=true&characterEncoding=utf-8"
-     user="iot"  password="Iot85228800#1"/>
+     user=""  password=""/>
     <sql:query dataSource="${snapshot}" var="result">
 	SELECT MODEL_NAME,FILE_ID,FILE_NAME,FILE_VER,FILE_TIME from file a,model b where a.model_id=b.model_id and b.GROUP_ID = <%=request.getParameter("group_id")%>;
 	</sql:query>
