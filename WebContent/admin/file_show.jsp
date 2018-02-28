@@ -26,6 +26,7 @@ response.addHeader( "Cache-Control", "must-revalidate" );
 Cookie c = new Cookie("livetime","alive");
 c.setMaxAge(500);
 response.addCookie(c);
-response.getOutputStream().write(bs);  
+response.getOutputStream().write(bs); 
+out.clear();
 DBDao.close(rs, stmt, con);
 %>

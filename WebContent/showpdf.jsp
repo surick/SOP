@@ -31,7 +31,8 @@
 			response.setDateHeader("Expires", 0);   
 			response.addHeader( "Cache-Control", "no-cache" ); // 浏览器和缓存服务器都不应该缓存页面信息
 	
-			response.getOutputStream().write(bs);  
+			response.getOutputStream().write(bs); 
+			out.clear();
 			DBDao.close(rs, stmt, con);
 		}
 	}
